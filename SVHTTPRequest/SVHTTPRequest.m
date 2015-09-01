@@ -229,7 +229,7 @@ static NSTimeInterval SVHTTPRequestTimeoutInterval = 20;
     
     NSString *method = self.operationRequest.HTTPMethod;
     
-    if([method isEqualToString:@"POST"] || [method isEqualToString:@"PUT"] || [method isEqualToString:@"PATCH"]) {
+    if([method isEqualToString:@"POST"] || [method isEqualToString:@"PUT"] || [method isEqualToString:@"PATCH"] || [method isEqualToString:@"DELETE"]) {
         if(self.sendParametersAsJSON) {
             if([parameters isKindOfClass:[NSArray class]] || [parameters isKindOfClass:[NSDictionary class]]) {
                 [self.operationRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
