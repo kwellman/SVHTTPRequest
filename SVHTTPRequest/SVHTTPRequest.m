@@ -209,6 +209,8 @@ static NSTimeInterval SVHTTPRequestTimeoutInterval = 20;
         [self.operationRequest setHTTPMethod:@"DELETE"];
     else if(method == SVHTTPRequestMethodHEAD)
         [self.operationRequest setHTTPMethod:@"HEAD"];
+    else if(method == SVHTTPRequestMethodPATCH)
+        [self.operationRequest setHTTPMethod:@"PATCH"];
 
     self.state = SVHTTPRequestStateReady;
     
@@ -227,7 +229,7 @@ static NSTimeInterval SVHTTPRequestTimeoutInterval = 20;
     
     NSString *method = self.operationRequest.HTTPMethod;
     
-    if([method isEqualToString:@"POST"] || [method isEqualToString:@"PUT"]) {
+    if([method isEqualToString:@"POST"] || [method isEqualToString:@"PUT"] || [method isEqualToString:@"PATCH"]) {
         if(self.sendParametersAsJSON) {
             if([parameters isKindOfClass:[NSArray class]] || [parameters isKindOfClass:[NSDictionary class]]) {
                 [self.operationRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
