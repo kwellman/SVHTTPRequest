@@ -17,7 +17,8 @@ enum {
     SVHTTPRequestMethodPOST,
     SVHTTPRequestMethodPUT,
     SVHTTPRequestMethodDELETE,
-    SVHTTPRequestMethodHEAD
+    SVHTTPRequestMethodHEAD,
+    SVHTTPRequestMethodPATCH
 };
 typedef NSUInteger SVHTTPRequestMethod;
 
